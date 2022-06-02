@@ -15,6 +15,8 @@ export const create = async () => {
 
             throw err;
         }
+
+        console.log('File has been created!');
     });
 };
 
