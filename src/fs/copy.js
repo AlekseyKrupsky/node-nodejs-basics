@@ -8,20 +8,20 @@ export const copy = async () => {
         if (null === err) {
             throw new Error('FS operation failed.');
         }
-    });
 
-    const options = {
-        recursive: true,
-    };
+        const options = {
+            recursive: true,
+        };
 
-    cp(sourceDir, destinationDir, options, (err) => {
-        if (null !== err && err.code === 'ENOENT') {
-            throw new Error('FS operation failed.');
-        }
+        cp(sourceDir, destinationDir, options, (err) => {
+            if (null !== err && err.code === 'ENOENT') {
+                throw new Error('FS operation failed.');
+            }
 
-        if (null === err) {
-            console.log('Files were copies successful');
-        }
+            if (null === err) {
+                console.log('Files were copies successful');
+            }
+        });
     });
 };
 

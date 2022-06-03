@@ -7,16 +7,16 @@ export const create = async () => {
         if (null === err) {
             throw new Error('FS operation failed');
         }
-    });
 
-    writeFile(filePath, 'I am fresh and young', (err) => {
-        if (null !== err) {
-            err.message = 'Write operation failed';
+        writeFile(filePath, 'I am fresh and young', (err) => {
+            if (null !== err) {
+                err.message = 'Write operation failed';
 
-            throw err;
-        }
+                throw err;
+            }
 
-        console.log('File has been created!');
+            console.log('File has been created!');
+        });
     });
 };
 

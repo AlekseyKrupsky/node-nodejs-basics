@@ -32,5 +32,5 @@ const createMyServer = createServerHttp((_, res) => {
     res.end('Request accepted');
 });
 
+//Run textExport.mjs to test exports
 export { unknownObject, createMyServer };
-

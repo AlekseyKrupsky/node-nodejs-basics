@@ -10,7 +10,11 @@ export const parseEnv = () => {
         }
     }
 
-    console.log(rssVariables.join('; '));
+    if (rssVariables.length !== 0) {
+        console.log(rssVariables.join('; '));
+    } else {
+        console.log('Can\'t find any variable with RSS_ prefix');
+    }
 };
 
 parseEnv();

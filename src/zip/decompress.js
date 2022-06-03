@@ -10,11 +10,10 @@ export const decompress = async () => {
 
     pipeline(source, unzip, destination, (err) => {
         if (err) {
-            console.log(err);
             throw new Error('Error occurred. Please try again');
         }
 
-        console.log('File has been compressed!');
+        console.log('File has been decompressed!');
     });
 };
 

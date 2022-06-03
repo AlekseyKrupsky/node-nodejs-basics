@@ -8,16 +8,16 @@ export const rename = async () => {
         if (null === err) {
             throw new Error('FS operation failed');
         }
-    });
 
-    renameFile(wrongFileNamePath, properFileNamePath, (err) => {
-        if (null !== err && err.code === 'ENOENT') {
-            throw new Error('FS operation failed');
-        }
+        renameFile(wrongFileNamePath, properFileNamePath, (err) => {
+            if (null !== err && err.code === 'ENOENT') {
+                throw new Error('FS operation failed');
+            }
 
-        if (null === err) {
-            console.log('File was renamed');
-        }
+            if (null === err) {
+                console.log('File was renamed');
+            }
+        });
     });
 };
 

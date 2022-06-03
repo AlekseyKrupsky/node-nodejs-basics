@@ -6,6 +6,9 @@ export const nthFibonacci = (n) => n < 2 ? n : nthFibonacci(n - 1) + nthFibonacc
 export const sendResult = () => {
     const result = nthFibonacci(workerData);
 
+    //Use line below to test error case
+    //if (workerData === 11) throw Error('Test error!');
+
     parentPort.postMessage(result);
 };
 
