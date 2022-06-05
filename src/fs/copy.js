@@ -1,8 +1,13 @@
 import { access, constants, cp } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export const copy = async () => {
-    const sourceDir = './files';
-    const destinationDir = './files_copy';
+    const sourceDir = `${__dirname}/files`;
+    const destinationDir = `${__dirname}/files_copy`;
 
     access(destinationDir, constants.F_OK, (err) => {
         if (null === err) {

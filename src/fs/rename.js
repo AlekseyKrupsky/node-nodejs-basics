@@ -1,8 +1,13 @@
 import { access, constants, rename as renameFile } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export const rename = async () => {
-    const wrongFileNamePath = './files/wrongFilename.txt';
-    const properFileNamePath = './files/properFilename.md';
+    const wrongFileNamePath = `${__dirname}/files/wrongFilename.txt`;
+    const properFileNamePath = `${__dirname}/files/properFilename.md`;
 
     access(properFileNamePath, constants.F_OK, (err) => {
         if (null === err) {
